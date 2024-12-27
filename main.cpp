@@ -6,22 +6,22 @@ using namespace std;
 
 
 int* New_arr(int n) {
-	int m; //ÀÔ·Â¹ŞÀ» º¯¼ö
+	int m; //ì…ë ¥ë°›ì„ ë³€ìˆ˜
 
-	int* arr = new int[n]; //µ¿ÀûÇÒ´ç
+	int* arr = new int[n]; //ë™ì í• ë‹¹
 
-	for (int i = 0; i < n; i++) { //¹è¿­¿¡ µ¥ÀÌÅÍ ÀÔ·Â
+	for (int i = 0; i < n; i++) { //ë°°ì—´ì— ë°ì´í„° ì…ë ¥
 		cin >> m;
 		arr[i] = m;
 	}
-	return arr; //ÀÔ·ÂµÈ ¹è¿­ ¸®ÅÏ
+	return arr; //ì…ë ¥ëœ ë°°ì—´ ë¦¬í„´
 }
 
-void up_Sort(int n, int* arr) {//¿À¸§Â÷¼ø Á¤·Ä
+void up_Sort(int n, int* arr) {//ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 
-	for (int i = 0; i < n - 1; i++) { //°¢ ÀÎµ¦½º ¼±ÅÃ, sizeof ÇÔ¼ö ¾²¸é °³ÆÇ³²
-		for (int j = 0; j < n - 1 - i; j++) {//¼±ÅÃµÈ ÀÎµ¦½º¸¦ ´ÙÀ½ ÀÎµ¦½º¿Í ºñ±³
-			if (arr[j] > arr[j + 1]) {//ÀüÀÚ°¡ ´õ ÀÛÀ¸¸é ÀÚ¸® º¯°æ
+	for (int i = 0; i < n - 1; i++) { //ê° ì¸ë±ìŠ¤ ì„ íƒ, sizeof í•¨ìˆ˜ ì“°ë©´ ê°œíŒë‚¨
+		for (int j = 0; j < n - 1 - i; j++) {//ì„ íƒëœ ì¸ë±ìŠ¤ë¥¼ ë‹¤ìŒ ì¸ë±ìŠ¤ì™€ ë¹„êµ
+			if (arr[j] > arr[j + 1]) {//ì „ìê°€ ë” ì‘ìœ¼ë©´ ìë¦¬ ë³€ê²½
 				int imsi = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = imsi;
@@ -29,23 +29,23 @@ void up_Sort(int n, int* arr) {//¿À¸§Â÷¼ø Á¤·Ä
 		}
 	}
 
-	for (int i = 0; i < n; i++) {//¹è¿­°ª Â÷·Ê´ë·Î Ãâ·Â
+	for (int i = 0; i < n; i++) {//ë°°ì—´ê°’ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
 		cout << arr[i] << " ";
 	}
 	cout << endl;
 }
 
-void down_Sort(int n, int* arr) {//³»¸²Â÷¼ø Á¤·Ä
+void down_Sort(int n, int* arr) {//ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 	for (int i = 0; i < n - 1; i++) { 
-		for (int j = 0; j < n - 1 - i; j++) {//¼±ÅÃµÈ ÀÎµ¦½º¸¦ ´ÙÀ½ ÀÎµ¦½º¿Í ºñ±³
-			if (arr[j] < arr[j + 1]) {//ÀüÀÚ°¡ ´õ Å©¸é ÀÚ¸® º¯°æ
+		for (int j = 0; j < n - 1 - i; j++) {//ì„ íƒëœ ì¸ë±ìŠ¤ë¥¼ ë‹¤ìŒ ì¸ë±ìŠ¤ì™€ ë¹„êµ
+			if (arr[j] < arr[j + 1]) {//ì „ìê°€ ë” í¬ë©´ ìë¦¬ ë³€ê²½
 				int imsi = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = imsi;
 			}
 		}
 	}
-	for (int i = 0; i < n; i++) {//¹è¿­°ª Â÷·Ê´ë·Î Ãâ·Â
+	for (int i = 0; i < n; i++) {//ë°°ì—´ê°’ ì°¨ë¡€ëŒ€ë¡œ ì¶œë ¥
 
 		cout << arr[i] << " ";
 	}
@@ -60,35 +60,35 @@ int sum(int n, int* arr) {
 	return Sum;
 }
 
-int avr(int n, int* arr) {
+double avr(int n, int* arr) {
 
-	int Avr = sum(n, arr) / n;
+	double Avr = sum(n, arr) / n;
 
 	return Avr;
 }
 
 int main() {
 
-	int n; //ÀÔ·Â¹ŞÀ» º¯¼ö
-	int order = 10; //ÀÇ¹Ì ¾ø´Â ¼ö
-	cout << "¸î°³ÀÇ ¼ö¸¦ ÀÔ·ÂÇÒÁö ÀÔ·ÂÇØÁÖ¼¼¿ä" << endl;
+	int n; //ì…ë ¥ë°›ì„ ë³€ìˆ˜
+	int order = 10; //ì˜ë¯¸ ì—†ëŠ” ìˆ˜
+	cout << "ëª‡ê°œì˜ ìˆ˜ë¥¼ ì…ë ¥í• ì§€ ì…ë ¥í•´ì£¼ì„¸ìš”" << endl;
 	cin >> n;
 
-	int* arr = New_arr(n); //µ¿ÀûÇÒ´ç ÇÔ¼ö
+	int* arr = New_arr(n); //ë™ì í• ë‹¹ í•¨ìˆ˜
 
-	while (order != 0) { //0À» ´©¸¦½Ã Á¾·á
-		cout << "1¹øÀº ¿À¸§Â÷¼ø, 2¹øÀº ³»¸²Â÷¼ø, 3¹øÀº ÃÑÇÕ, 4¹øÀº Æò±Õ, Á¾·á´Â 0¹ø " << endl;
-		cin >> order; //¹øÈ£ÀÔ·ÂÀ¸·Î ¸í·É
+	while (order != 0) { //0ì„ ëˆ„ë¥¼ì‹œ ì¢…ë£Œ
+		cout << "1ë²ˆì€ ì˜¤ë¦„ì°¨ìˆœ, 2ë²ˆì€ ë‚´ë¦¼ì°¨ìˆœ, 3ë²ˆì€ ì´í•©, 4ë²ˆì€ í‰ê· , ì¢…ë£ŒëŠ” 0ë²ˆ " << endl;
+		cin >> order; //ë²ˆí˜¸ì…ë ¥ìœ¼ë¡œ ëª…ë ¹
 		switch (order) {
-		case 1: up_Sort(n, arr); //¿À¸§Â÷¼ø Á¤·Ä
+		case 1: up_Sort(n, arr); //ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 			break;
-		case 2: down_Sort(n, arr);//³»¸²Â÷¼ø Á¤·Ä
+		case 2: down_Sort(n, arr);//ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 			break;
-		case 3: cout << "ÃÑÇÕÀº:" << " " << sum(n, arr) << endl; //ÃÑÇÕ Ãâ·Â
+		case 3: cout << "ì´í•©ì€:" << " " << sum(n, arr) << endl; //ì´í•© ì¶œë ¥
 			break;
-		case 4: cout << "Æò±ÕÀº:" << " " << avr(n, arr) << endl; //Æò±Õ Ãâ·Â
+		case 4: cout << "í‰ê· ì€:" << " " << avr(n, arr) << endl; //í‰ê·  ì¶œë ¥
 			break;
-			cout << "Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+			cout << "ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤ ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”" << endl;
 		}
 	}
 
